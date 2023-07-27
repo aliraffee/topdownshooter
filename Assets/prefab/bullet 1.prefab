@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7977678188291579343}
   m_Layer: 0
   m_Name: bullet 1
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,10 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868b0a6b8aa8fbe43ad20fe64756ce45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabSpawn: {fileID: 0}
-  player: {fileID: 0}
-  fireRate: 0
-  i: 0
 --- !u!50 &5342105708119999225
 Rigidbody2D:
   serializedVersion: 4

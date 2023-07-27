@@ -243,7 +243,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 380969158}
-  - component: {fileID: 380969159}
   m_Layer: 0
   m_Name: game manager
   m_TagString: Untagged
@@ -266,24 +265,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &380969159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380969157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae3c3c834fe7fab49ba3494f094fa75c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1914860268}
-  speed: 2
-  i: 0
-  firerate: 100
-  weapon: {fileID: 737680947}
-  rb: {fileID: 1914860270}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,8 +889,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca82f6722f9d654fb37633775fbecb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.01
+  speed: 0.1
   player: {fileID: 1914860268}
+  gm: {fileID: 1914860272}
+  enemyhealth: 0
 --- !u!212 &1475406383
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -970,8 +953,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475406381}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.5974, y: 0.8569, z: 0}
-  m_LocalScale: {x: 1.2453, y: 1.2861, z: 1}
+  m_LocalPosition: {x: -11.1826, y: 0.5153, z: 0}
+  m_LocalScale: {x: 1.8294611, y: 1.6832, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1011,7 +994,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475406381}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1344,6 +1327,7 @@ GameObject:
   - component: {fileID: 1914860269}
   - component: {fileID: 1914860271}
   - component: {fileID: 1914860270}
+  - component: {fileID: 1914860272}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -1466,6 +1450,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1914860272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914860267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae3c3c834fe7fab49ba3494f094fa75c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1914860268}
+  speed: 2
+  i: 0
+  firerate: 100
+  enemydamage: 0
+  bulletdamage: 0
+  weapon: {fileID: 737680947}
+  rb: {fileID: 1914860270}
+  health: 100
+  healthtxt: {fileID: 1982605585}
 --- !u!1 &1982188263
 GameObject:
   m_ObjectHideFlags: 0

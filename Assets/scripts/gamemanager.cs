@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 /// <summary>
 /// game idea
@@ -15,17 +16,20 @@ using UnityEngine;
 public class gamemanager : MonoBehaviour
 {
     public Transform player;
-    public int speed,i,firerate;
+    public int speed,i,firerate, enemydamage,bulletdamage;
     public gun weapon;
     public Rigidbody2D rb;
     Vector2 mvdir, mousepos;
+    public int health = 100;
+    public TextMeshProUGUI healthtxt;
+       
    
 
    
     // Start is called before the first frame update
     void Start()
     {
-        
+        bulletdamage = 30;
     }
     public void Update()
     {
@@ -59,9 +63,22 @@ public class gamemanager : MonoBehaviour
         {
             player.position = new Vector2(player.position.x + speed, player.position.y);
         }
-        Debug.Log(player.position);
+       // Debug.Log(player.position);
         
 
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("yes");
+        if (collision.gameObject.name=="normal")
+        {
+            enemydamage = 30;
+        }
+        health -= enemydamage;
+        enemydamage = 0;
+        Debug.Log(collision.gameObject.name);
+        healthtxt.text = health.ToString();
+      
     }
 
     // Update is called once per frame
