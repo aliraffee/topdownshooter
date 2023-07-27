@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class normalenemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // S
+    // tart is called before the first frame update
+
+    public float speed=5f;
+    public Transform player;
+    Rigidbody2D rb;
+    GameObject players;
+    private void FixedUpdate()
     {
         
+        rb = this.GetComponent<Rigidbody2D>();
+        
+        
+        
+        Debug.Log(player.position);
+        
+        rb.position = Vector3.MoveTowards(transform.position,player.position, speed);
+        transform.rotation = Quaternion.Euler(Vector3.zero);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

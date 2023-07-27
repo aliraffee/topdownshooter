@@ -59,6 +59,7 @@ public class gamemanager : MonoBehaviour
         {
             player.position = new Vector2(player.position.x + speed, player.position.y);
         }
+        Debug.Log(player.position);
         
 
     }
